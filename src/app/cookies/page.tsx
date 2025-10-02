@@ -63,9 +63,6 @@ export default function CookiePolicyPage() {
               <p>
                 Hopefully, that has clarified things for you. If you are still looking for more information, then you can contact us through our preferred contact method:
               </p>
-              <p>
-                Email: <a href="mailto:poojary.rupesh12@gmail.com" className="text-accent hover:underline">poojary.rupesh12@gmail.com</a>
-              </p>
             </CardContent>
           </Card>
         </div>

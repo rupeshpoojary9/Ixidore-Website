@@ -81,9 +81,6 @@ export default function PrivacyPolicyPage() {
               </p>
               
               <h3 className="text-2xl font-semibold text-foreground pt-4 font-heading">Contact Us</h3>
-              <p>
-                If you have questions or comments about this Privacy Policy, please contact us at: <a href="mailto:poojary.rupesh12@gmail.com" className="text-accent hover:underline">poojary.rupesh12@gmail.com</a>
-              </p>
             </CardContent>
           </Card>
         </div>

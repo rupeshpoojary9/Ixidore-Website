@@ -67,58 +67,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links - Spans 2 columns */}
-          <div className="lg:col-span-2">
-            <h3 className="font-semibold text-foreground mb-4 font-heading text-lg">Quick Links</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link 
-                  href="#problem" 
-                  className="text-sm text-muted-foreground hover:text-accent transition-colors inline-flex items-center gap-2 group"
-                >
-                  <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
-                  The Problem
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="#services" 
-                  className="text-sm text-muted-foreground hover:text-accent transition-colors inline-flex items-center gap-2 group"
-                >
-                  <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="#why-us" 
-                  className="text-sm text-muted-foreground hover:text-accent transition-colors inline-flex items-center gap-2 group"
-                >
-                  <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
-                  Why Us
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="#testimonials" 
-                  className="text-sm text-muted-foreground hover:text-accent transition-colors inline-flex items-center gap-2 group"
-                >
-                  <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
-                  Testimonials
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="#assessment" 
-                  className="text-sm text-muted-foreground hover:text-accent transition-colors inline-flex items-center gap-2 group"
-                >
-                  <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
-                  Get Assessment
-                </Link>
-              </li>
-            </ul>
-          </div>
-
           {/* Contact Info - Spans 3 columns */}
           <div className="lg:col-span-3">
             <h3 className="font-semibold text-foreground mb-4 font-heading text-lg">Contact</h3>
@@ -126,15 +74,6 @@ export default function Footer() {
               <li className="flex items-start gap-3 group">
                 <div className="p-2 rounded-lg bg-accent/10 group-hover:bg-accent/20 transition-colors">
                   <Mail className="h-4 w-4 text-accent flex-shrink-0" />
-                </div>
-                <div>
-                  <p className="text-xs text-muted-foreground mb-1">Email</p>
-                  <a 
-                    href="mailto:poojary.rupesh12@gmail.com" 
-                    className="text-sm text-foreground hover:text-accent transition-colors font-medium"
-                  >
-                    poojary.rupesh12@gmail.com
-                  </a>
                 </div>
               </li>
               <li className="flex items-start gap-3 group">
