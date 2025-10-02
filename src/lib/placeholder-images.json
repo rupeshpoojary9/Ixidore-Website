@@ -1,0 +1,28 @@
+{
+  "placeholderImages": [
+    {
+      "id": "testimonial-avatar",
+      "description": "Avatar for a testimonial author",
+      "imageUrl": "https://images.unsplash.com/photo-1672794444732-e007954a177c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwb3J0cmFpdCUyMHBlcnNvbnxlbnwwfHx8fDE3NTkzMjc5Mjh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "portrait person"
+    },
+    {
+      "id": "blog-post-1",
+      "description": "Abstract image representing AI",
+      "imageUrl": "https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxBSSUyMGFic3RyYWN0fGVufDB8fHx8MTc1OTQwOTk5OXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "AI abstract"
+    },
+    {
+      "id": "blog-post-2",
+      "description": "Image of a small business owner working",
+      "imageUrl": "https://images.unsplash.com/photo-1582582450303-48cc2cfa2c43?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxzbWFsbCUyMGJ1c2luZXNzfGVufDB8fHx8MTc1OTM3ODM1Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "small business"
+    },
+    {
+      "id": "blog-post-3",
+      "description": "Image representing workflow automation",
+      "imageUrl": "https://images.unsplash.com/photo-1602468432285-0fe26e8352ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx3b3JrZmxvdyUyMGF1dG9tYXRpb258ZW58MHx8fHwxNzU5NDA5OTk5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "workflow automation"
+    }
+  ]
+}
