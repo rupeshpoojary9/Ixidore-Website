@@ -3,7 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Menu, X, Phone, Mail, ArrowRight } from "lucide-react"
+import { Menu, X, ArrowRight, HardHat } from "lucide-react"
 import Logo from '@/assets/logo.png';
 
 import { Button } from "@/components/ui/button"
@@ -29,20 +29,21 @@ export default function Header() {
     <header 
       className={`sticky top-0 z-50 w-full border-b transition-all duration-300 ${
         scrolled 
-          ? 'border-border/60 bg-background/98 backdrop-blur-md shadow-md' 
-          : 'border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'
+          ? 'border-border/60 bg-background/98 backdrop-blur-md shadow-sm' 
+          : 'border-transparent bg-background/80 backdrop-blur'
       }`}
     >
-      <div className="container flex h-16 md:h-18 items-center">
+      <div className="container flex h-16 md:h-20 items-center">
         {/* Logo */}
         <div className="mr-6 lg:mr-8 flex">
-          <Link href="/" className="flex items-center space-x-2 group">
+          <Link href="/" className="flex items-center space-x-2 group" aria-label="Ixidore Home">
             <Image 
               src={Logo}
               alt="Ixidore Logo" 
-              width={256} 
-              height={256}
-              className="h-10 md:h-12 w-auto transition-transform group-hover:scale-105"
+              width={300} 
+              height={300}
+              priority
+              className="h-12 md:h-12 w-auto transition-transform group-hover:scale-105 mt-3"
             />
           </Link>
         </div>
@@ -51,31 +52,31 @@ export default function Header() {
         <nav className="hidden items-center gap-6 lg:gap-8 text-sm font-medium md:flex">
           <Link
             href="#problem"
-            className="transition-colors hover:text-accent text-foreground/70 hover:text-foreground relative group"
+            className="transition-colors text-foreground/70 hover:text-primary relative group"
           >
             The Problem
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all group-hover:w-full"></span>
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
           </Link>
           <Link
-            href="#services"
-            className="transition-colors hover:text-accent text-foreground/70 hover:text-foreground relative group"
+            href="#solution"
+            className="transition-colors text-foreground/70 hover:text-primary relative group"
           >
-            Services
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all group-hover:w-full"></span>
+            Solutions
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
           </Link>
           <Link
             href="#why-us"
-            className="transition-colors hover:text-accent text-foreground/70 hover:text-foreground relative group"
+            className="transition-colors text-foreground/70 hover:text-primary relative group"
           >
-            Why Us
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all group-hover:w-full"></span>
+            Why Ixidore
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
           </Link>
           <Link
             href="#testimonials"
-            className="transition-colors hover:text-accent text-foreground/70 hover:text-foreground relative group"
+            className="transition-colors text-foreground/70 hover:text-primary relative group"
           >
-            Testimonials
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all group-hover:w-full"></span>
+            Results
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
           </Link>
         </nav>
 
@@ -89,8 +90,7 @@ export default function Header() {
             size="default"
           >
             <Link href="#assessment" className="flex items-center gap-2">
-              <Phone className="h-4 w-4" />
-              <span>Free Assessment</span>
+              <span>Free Consultation</span>
               <ArrowRight className="h-4 w-4" />
             </Link>
           </Button>
@@ -101,13 +101,14 @@ export default function Header() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="md:hidden hover:bg-accent/10"
+                className="md:hidden hover:bg-primary/10"
+                aria-label="Toggle Menu"
               >
                 {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
                 <span className="sr-only">Toggle Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[85vw] sm:w-[400px] p-0">
+            <SheetContent side="right" className="w-[85vw] sm:w-[400px] p-0 bg-background">
               <div className="flex flex-col h-full">
                 {/* Mobile Menu Header */}
                 <div className="p-6 border-b">
@@ -115,6 +116,7 @@ export default function Header() {
                     href="/" 
                     className="flex items-center space-x-2" 
                     onClick={() => setOpen(false)}
+                    aria-label="Ixidore Home"
                   >
                     <Image 
                       src={Logo}
@@ -132,41 +134,40 @@ export default function Header() {
                     <Link
                       href="#problem"
                       onClick={() => setOpen(false)}
-                      className="flex items-center justify-between rounded-lg p-4 hover:bg-accent/10 transition-colors group"
+                      className="flex items-center justify-between rounded-lg p-4 hover:bg-primary/10 transition-colors group"
                     >
                       <span className="font-medium">The Problem</span>
-                      <ArrowRight className="h-4 w-4 text-accent group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="h-4 w-4 text-primary group-hover:translate-x-1 transition-transform" />
                     </Link>
                     <Link
-                      href="#services"
+                      href="#solution"
                       onClick={() => setOpen(false)}
-                      className="flex items-center justify-between rounded-lg p-4 hover:bg-accent/10 transition-colors group"
+                      className="flex items-center justify-between rounded-lg p-4 hover:bg-primary/10 transition-colors group"
                     >
-                      <span className="font-medium">Services</span>
-                      <ArrowRight className="h-4 w-4 text-accent group-hover:translate-x-1 transition-transform" />
+                      <span className="font-medium">Solutions</span>
+                      <ArrowRight className="h-4 w-4 text-primary group-hover:translate-x-1 transition-transform" />
                     </Link>
                     <Link
                       href="#why-us"
                       onClick={() => setOpen(false)}
-                      className="flex items-center justify-between rounded-lg p-4 hover:bg-accent/10 transition-colors group"
+                      className="flex items-center justify-between rounded-lg p-4 hover:bg-primary/10 transition-colors group"
                     >
-                      <span className="font-medium">Why Us</span>
-                      <ArrowRight className="h-4 w-4 text-accent group-hover:translate-x-1 transition-transform" />
+                      <span className="font-medium">Why Ixidore</span>
+                      <ArrowRight className="h-4 w-4 text-primary group-hover:translate-x-1 transition-transform" />
                     </Link>
                     <Link
                       href="#testimonials"
                       onClick={() => setOpen(false)}
-                      className="flex items-center justify-between rounded-lg p-4 hover:bg-accent/10 transition-colors group"
+                      className="flex items-center justify-between rounded-lg p-4 hover:bg-primary/10 transition-colors group"
                     >
-                      <span className="font-medium">Testimonials</span>
-                      <ArrowRight className="h-4 w-4 text-accent group-hover:translate-x-1 transition-transform" />
+                      <span className="font-medium">Results</span>
+                      <ArrowRight className="h-4 w-4 text-primary group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </div>
                 </nav>
 
                 {/* Mobile Menu Footer */}
                 <div className="p-6 border-t space-y-4 bg-secondary/20">
-                  
                   <Button 
                     asChild 
                     className="w-full font-bold bg-accent hover:bg-accent/90 text-accent-foreground rounded-full shadow-md"
@@ -176,8 +177,7 @@ export default function Header() {
                       onClick={() => setOpen(false)}
                       className="flex items-center justify-center gap-2"
                     >
-                      <Phone className="h-4 w-4" />
-                      Get Free Assessment
+                      Free Consultation
                       <ArrowRight className="h-4 w-4" />
                     </Link>
                   </Button>

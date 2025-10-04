@@ -8,28 +8,25 @@ import { motion } from 'framer-motion';
 
 const testimonials = [
   {
-    quote: "Ixidore transformed our operations. The workflow automation they implemented saved us over 20 hours a week and significantly reduced errors. It was a game-changer for our small team.",
-    author: "Jane Doe",
-    role: "CEO, Small Business Owner",
-    company: "TechStart Co.",
-    initials: "JD",
-    metric: "20+ hours saved weekly"
+    quote: "The Intelligent Clash Filtering saved our VDC team about 75% of their review time. We went from days to hours. It's been a massive productivity boost.",
+    author: "VP of Engineering",
+    company: "Top 50 ENR MEP Firm",
+    initials: "VP",
+    metric: "75% reduction in clash review"
   },
   {
-    quote: "The ROI was incredible. Within 3 months, we saw a 40% reduction in operational costs and our team could finally focus on growth instead of repetitive tasks.",
-    author: "Michael Chen",
-    role: "Operations Manager",
-    company: "BuildRight Construction",
-    initials: "MC",
-    metric: "40% cost reduction"
+    quote: "Ixidore automated our RFI and submittal process. Their understanding of MEP documentation is unmatched. We're saving over $100k per project on coordination costs alone.",
+    author: "Director of Operations",
+    company: "National MEP Contractor",
+    initials: "DO",
+    metric: "$100k+ saved per project"
   },
   {
-    quote: "What impressed me most was their hands-on approach. They didn't just recommend solutions—they built and implemented everything. Our client response time went from hours to minutes.",
-    author: "Sarah Williams",
-    role: "Practice Owner",
-    company: "Williams Legal Services",
-    initials: "SW",
-    metric: "95% faster responses"
+    quote: "We saw a 3x ROI in under 6 months. Their focus on 'easy wins' gave us immediate value and built the trust we needed to explore more advanced AI applications.",
+    author: "Principal Partner",
+    company: "Regional MEP Consulting Firm",
+    initials: "PP",
+    metric: "3x ROI in 6 months"
   }
 ];
 
@@ -58,11 +55,8 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section id="testimonials" className="w-full py-20 md:py-32 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 bg-gradient-to-b from-secondary/20 via-transparent to-secondary/20" />
-      
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
+    <section id="testimonials" className="w-full py-20 md:py-32 bg-white">
+      <div className="container mx-auto px-4 md:px-6">
         <motion.div 
           className="flex flex-col items-center space-y-4 text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -70,20 +64,19 @@ export default function TestimonialsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20">
-            <Star className="h-4 w-4 text-accent fill-accent" />
-            <span className="text-sm font-semibold text-accent">Client Success Stories</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
+            <Star className="h-4 w-4 text-primary fill-primary" />
+            <span className="text-sm font-semibold text-primary">Real-World Results</span>
           </div>
           
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-primary-dark font-heading max-w-3xl">
-            Trusted by Businesses Like Yours
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-foreground font-heading max-w-3xl">
+            Trusted by Leading MEP Firms
           </h2>
           <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-            See what our clients are saying about the impact of our AI solutions on their operations and bottom line.
+            We deliver tangible results that save money, reduce risk, and accelerate project timelines. Here's what our clients are saying.
           </p>
         </motion.div>
 
-        {/* Testimonials Grid */}
         <motion.div 
           className="mx-auto mt-16 max-w-6xl grid gap-8 md:grid-cols-3"
           variants={containerVariants}
@@ -93,52 +86,30 @@ export default function TestimonialsSection() {
         >
           {testimonials.map((testimonial, index) => (
             <motion.div key={index} variants={itemVariants}>
-              <Card className="h-full bg-card shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border-2 hover:border-accent/50 group relative overflow-hidden">
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                
-                <CardContent className="p-6 md:p-8 relative z-10">
-                  {/* Quote icon */}
+              <Card className="h-full bg-card shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border hover:border-primary/50 group">
+                <CardContent className="p-6 md:p-8">
                   <div className="mb-4">
-                    <Quote className="h-10 w-10 text-accent/30" />
+                    <Quote className="h-8 w-8 text-primary/30" />
                   </div>
                   
-                  {/* Star rating */}
-                  <div className="flex gap-1 mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                  
-                  {/* Quote */}
                   <blockquote className="text-base leading-relaxed text-muted-foreground mb-6 italic">
                     "{testimonial.quote}"
                   </blockquote>
                   
-                  {/* Metric badge */}
                   <div className="mb-6 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 border border-accent/20">
                     <TrendingUp className="h-4 w-4 text-accent" />
                     <span className="text-sm font-semibold text-accent">{testimonial.metric}</span>
                   </div>
                   
-                  {/* Author */}
                   <div className="flex items-center gap-4 pt-6 border-t">
-                    <Avatar className="h-12 w-12 border-2 border-accent/20">
-                      {index === 0 && testimonialImage && (
-                        <AvatarImage 
-                          src={testimonialImage.imageUrl} 
-                          alt={testimonial.author} 
-                          data-ai-hint={testimonialImage.imageHint} 
-                        />
-                      )}
-                      <AvatarFallback className="bg-accent/10 text-accent font-semibold">
+                    <Avatar className="h-12 w-12 border-2 border-primary/20">
+                      <AvatarFallback className="bg-primary/10 text-primary font-semibold">
                         {testimonial.initials}
                       </AvatarFallback>
                     </Avatar>
                     <div className="text-left">
                       <p className="font-semibold text-foreground">{testimonial.author}</p>
-                      <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                      <p className="text-xs text-muted-foreground">{testimonial.company}</p>
+                      <p className="text-sm text-muted-foreground">{testimonial.company}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -147,7 +118,6 @@ export default function TestimonialsSection() {
           ))}
         </motion.div>
 
-        {/* Stats banner */}
         <motion.div
           className="mt-16 max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
@@ -155,20 +125,24 @@ export default function TestimonialsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <Card className="bg-gradient-to-r from-accent/10 via-accent/5 to-accent/10 border-accent/20 shadow-lg">
+          <Card className="bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 border-primary/20 shadow-lg">
             <CardContent className="p-8">
-              <div className="grid grid-cols-3 gap-8 text-center">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                 <div>
-                  <div className="text-4xl font-bold text-accent mb-2">98%</div>
-                  <div className="text-sm text-muted-foreground">Client Satisfaction</div>
+                  <div className="text-4xl font-bold text-primary mb-1">90%</div>
+                  <div className="text-sm text-muted-foreground">Trivial Task Elimination</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-accent mb-2">50+</div>
-                  <div className="text-sm text-muted-foreground">Businesses Served</div>
+                  <div className="text-4xl font-bold text-primary mb-1">73%</div>
+                  <div className="text-sm text-muted-foreground">Doc Analysis Savings</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-accent mb-2">$500K+</div>
-                  <div className="text-sm text-muted-foreground">Saved Annually</div>
+                  <div className="text-4xl font-bold text-primary mb-1">88%</div>
+                  <div className="text-sm text-muted-foreground">Faster Compliance</div>
+                </div>
+                <div>
+                  <div className="text-4xl font-bold text-primary mb-1">25%</div>
+                  <div className="text-sm text-muted-foreground">Faster Delivery</div>
                 </div>
               </div>
             </CardContent>

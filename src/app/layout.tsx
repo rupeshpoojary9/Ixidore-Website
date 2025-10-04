@@ -15,14 +15,14 @@ const fontPTSans = PT_Sans({
   variable: '--font-pt-sans',
 });
 
-const title = 'AI Consulting for Small Business | Automate & Grow with Ixidore';
-const description = 'Unlock growth with AI consulting for small businesses. Ixidore helps you automate workflows, cut costs, reduce errors, and optimize processes with tailored AI solutions that deliver ROI.';
-const url = 'https://ixidore.com';
+const title = 'Ixidore | AI Consulting for the MEP Industry';
+const description = 'We help MEP engineering firms and contractors eliminate manual work with tailored AI solutions. Reduce coordination costs, accelerate timelines, and increase profitability.';
+const url = 'https://ixidore.com'; // Replace with your actual domain
 
 export const metadata: Metadata = {
   title: title,
   description: description,
-  keywords: ['AI consulting', 'small business automation', 'workflow optimization', 'AI solutions'],
+  keywords: ['MEP AI consulting', 'BIM automation', 'Revit AI', 'Navisworks automation', 'MEP engineering AI', 'construction AI'],
   authors: [{ name: 'Ixidore' }],
   metadataBase: new URL(url),
   openGraph: {
@@ -32,17 +32,17 @@ export const metadata: Metadata = {
     description: description,
     siteName: 'Ixidore',
     images: [{
-      url: '/og-image.png', // It's a good practice to have a specific Open Graph image
+      url: '/og-image-mep.png', // It's a good practice to have a specific Open Graph image
       width: 1200,
       height: 630,
-      alt: 'Ixidore AI Solutions for Small Business',
+      alt: 'Ixidore AI for MEP Industry',
     }],
   },
   twitter: {
     card: 'summary_large_image',
     title: title,
     description: description,
-    images: ['/og-image.png'],
+    images: ['/og-image-mep.png'],
     creator: '@ixidore', // Replace with your Twitter handle
   },
   robots: {
@@ -65,21 +65,28 @@ export default function RootLayout({
 }>) {
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "ProfessionalService",
     "name": "Ixidore",
     "url": url,
     "logo": `${url}/logo.png`,
+    "description": description,
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Nationwide",
+      "addressCountry": "US"
+    },
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+1-555-555-5555", // Add your phone number
-      "contactType": "Customer Service",
-      "email": "poojary.rupesh12@gmail.com"
+      "contactType": "Sales",
+      "email": "contact@ixidore.com"
     },
     "sameAs": [
       "https://twitter.com/ixidore",
       "https://linkedin.com/company/ixidore"
     ],
-    "description": description
+    "serviceType": "AI Consulting",
+    "areaServed": "United States"
   };
 
   return (
